@@ -4,7 +4,7 @@ from training_pipeline_define import define_training_pipeline
 
 
 def format_template_str():
-    with open("/tmp/my_training_pipeline.yaml", "r") as file:
+    with open("./tmp/my_training_pipeline.yaml", "r") as file:
         data = file.read()
 
     # add the parameters
@@ -43,7 +43,7 @@ def format_template_str():
         'RoleArn: !Sub "${WorkflowExecutionRoleArn}"',
     )
 
-    with open("./templates/my_training_pipeline.yaml", "w") as file:
+    with open("../cloud_formation_templates/my_training_pipeline.yaml", "w") as file:
         file.write(data)
 
 
@@ -52,7 +52,7 @@ def create_training_pipeline(
     workflow_execution_role,
     training_pipeline_name,
     return_yaml=True,
-    dump_yaml_file="templates/sagemaker_training_pipeline.yaml",
+    dump_yaml_file="../cloud_formation_templates/sagemaker_training_pipeline.yaml",
     kms_key_id=None,
 ):
     """

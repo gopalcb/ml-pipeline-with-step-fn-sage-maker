@@ -1,2 +1,7 @@
 flask
 pyspark
+sagemaker
+numpy
+pytorch
+torch-vision
+matplotlib
